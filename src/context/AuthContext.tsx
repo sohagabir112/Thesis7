@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
 import { signIn, signUp, signOut, useSession } from "@/lib/auth-client";
 
 interface User {
@@ -36,7 +36,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const signup = useCallback(async (name: string, email: string, password: string, phone?: string) => {
+  const signup = useCallback(async (name: string, email: string, password: string, _phone?: string) => {
     setError(null);
     // better-auth doesn't officially support 'phone' in the default schema without plugins,
     // but we can pass it if we extended the schema, or just skip it for now.
@@ -56,7 +56,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         id: sessionData.user.id,
         name: sessionData.user.name,
         email: sessionData.user.email,
-        role: sessionData.user.role || "user",
+        role: "user",
       }
     : null;
 
