@@ -53,11 +53,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const user: User | null = sessionData?.user
     ? {
-        id: sessionData.user.id,
-        name: sessionData.user.name,
-        email: sessionData.user.email,
-        role: sessionData.user.role || "user",
-      }
+      id: sessionData.user.id,
+      name: sessionData.user.name,
+      email: sessionData.user.email,
+      role: sessionData.user.role || "user",
+    }
     : null;
 
   return (

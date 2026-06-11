@@ -67,17 +67,22 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
       <section
         ref={ref}
         className={cn(
-          "relative flex h-screen min-h-[700px] w-full items-center overflow-hidden",
+          "relative flex h-[100svh] min-h-[500px] md:min-h-[700px] w-full items-center overflow-hidden",
           className
         )}
         {...props}
       >
               {/* Background Image */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url('${imageUrl}')` }}
+          className="absolute inset-0 z-0 bg-black"
           aria-hidden="true"
-        />
+        >
+          <img
+            src={imageUrl}
+            alt="Hero background"
+            className="w-full h-full object-contain md:object-cover object-center"
+          />
+        </div>
 
         {/* Overlay */}
         <div className="absolute inset-0 z-10 bg-black/50 dark:bg-black/65" aria-hidden="true" />

@@ -102,11 +102,10 @@ export function Navbar({ onNavigateToDashboard }: { onNavigateToDashboard?: () =
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
             ? "bg-background/85 backdrop-blur-md border-border shadow-sm py-3"
             : "bg-transparent border-transparent py-4"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           {/* Logo */}
@@ -129,11 +128,10 @@ export function Navbar({ onNavigateToDashboard }: { onNavigateToDashboard?: () =
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className={`relative px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 cursor-pointer inline-block ${
-                        isActive
+                      className={`relative px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 cursor-pointer inline-block ${isActive
                           ? "text-primary"
                           : "text-foreground/70 hover:text-foreground"
-                      }`}
+                        }`}
                       aria-current={isActive ? "page" : undefined}
                     >
                       {link.name}
@@ -230,11 +228,10 @@ export function Navbar({ onNavigateToDashboard }: { onNavigateToDashboard?: () =
                       <a
                         href={link.href}
                         onClick={(e) => handleNavClick(e, link.href)}
-                        className={`block px-3 py-2.5 text-base font-medium rounded-md transition-colors duration-150 cursor-pointer ${
-                          activeSection === link.href
+                        className={`block px-3 py-2.5 text-base font-medium rounded-md transition-colors duration-150 cursor-pointer ${activeSection === link.href
                             ? "text-primary bg-primary/5"
                             : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                        }`}
+                          }`}
                       >
                         {link.name}
                       </a>
